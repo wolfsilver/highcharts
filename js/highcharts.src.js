@@ -8159,6 +8159,11 @@
                     }
                 }
 
+                // redraw when tickPositions length change
+                if (this.oldTickPositionsLen && this.oldTickPositionsLen != tickPositions.length) {
+                    this.isDirty = true;
+                }
+                this.oldTickPositionsLen = tickPositions.length;
             }
 
             if (!this.isLinked) {
